@@ -2,6 +2,11 @@
 
 mysql -h "server-name" -u root "password" "database-name" < "filename.sql"
 
+# import the dump file
+
+# Ask for c9 username to use 
+echo -e "What is your c9 username?"
+read USERNAME
 echo -e "\e[31mWhat is your name?"
 read NAME
 echo -e "\e[32mWhat is your age?"
@@ -18,3 +23,19 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 
 echo -e "\e[30m$uuid,$DATE,$NAME,$AGE,$MOVIE,$SONG,$BOOK" >> answers.csv
 
+
+
+# Enter mysql command line - Put all mysql commands inside "EOF" tags
+mysql -u $USERNAME -p << EOF
+
+--Use assignment4_questions database
+USE assignment4_questions;
+
+--Send answers into mySQL database
+INSERT INTO assignment4_answers (UUID,Date,Name,Age,Movie,Song,Book)
+    VALUES ($uuid, $DATE, $NAME, $AGE, $MOVIE, $SONG, $BOOK);
+
+EOF
+# end of mysql command line
+
+# output the dump
