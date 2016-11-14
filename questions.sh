@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo -e "What is your c9 username?"
+read USERNAME
 echo -e "\e[31mWhat is your name?"
 read NAME
 echo -e "\e[32mWhat is your age?"
@@ -15,3 +16,10 @@ DATE=$(date +"%F_%T")
 uuid=$(cat /proc/sys/kernel/random/uuid)
 
 echo -e "\e[30m$uuid,$DATE,$NAME,$AGE,$MOVIE,$SONG,$BOOK" >> answers.csv
+
+
+mysql USE 
+
+mysql -u $USERNAME -p INSERT INTO 'assignment4_questions' 
+    ('UUID','Date','Name','Age','Movie','Song','Book')
+    VALUES ($uuid, $DATE, $NAME, $AGE, $MOVIE, $SONG, $BOOK);
