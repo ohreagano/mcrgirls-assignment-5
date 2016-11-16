@@ -25,3 +25,4 @@ Create a primary key
 
 Now you're ready to run the script!
 
+P.S. Don't put apostraphes in your input!!!
