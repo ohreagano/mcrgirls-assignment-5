@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# import the dump file
-#mysql --username $USERNAME --password < questions.sh
 
 # Ask for c9 username to use 
 echo -e "What is your c9 username?"
 read USERNAME
+
+# import the dump file
+mysql --user="$USERNAME" --password database5 < answers.sql
+
 echo -e "\e[31mWhat is your name?"
 read NAME
 echo -e "\e[32mWhat is your age?"

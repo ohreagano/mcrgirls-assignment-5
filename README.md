@@ -19,5 +19,9 @@ Command to create table5
 
 `CREATE TABLE table5 (UUID VARCHAR(255), Date VARCHAR(255), Name VARCHAR(255), Age VARCHAR(255), Movie VARCHAR(255), Song VARCHAR(255), Book VARCHAR(255)); `
 
+Create a primary key
+
+`ALTER TABLE table5 ADD PRIMARY KEY (UUID);`
+
 Now you're ready to run the script!
 
