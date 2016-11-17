@@ -1,7 +1,7 @@
-# mcrgirls-assignment-5
+# Setup Code
 
-<<<<<<< HEAD
-mySQL code to setup the database:
+## Run this Setup Code if you have not yet created the table and database in your workspace
+
 
 Command to get into the mysql> prompt
 
